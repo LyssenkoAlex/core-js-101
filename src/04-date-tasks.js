@@ -99,11 +99,11 @@ function angleBetweenClockHands(date) {
   const minutes = date.getUTCMinutes();
 
 
-  const hourMinPart = 0.5 * minutes;
-  const hourHourPart = 30 * hours;
+  const hourMin = 0.5 * minutes;
+  const hourHoPart = 30 * hours;
   const minAngle = 6 * minutes;
-  const totalAngle = Math.abs(hourMinPart + hourHourPart - minAngle); // absolute difference
-  return (Math.abs(totalAngle) > 180 ? Math.abs(360 - totalAngle) : Math.abs(totalAngle)) * (Math.PI / 180);
+  const totalA = Math.abs(hourMin + hourHoPart - minAngle);
+  return (Math.abs(totalA) > 180 ? Math.abs(360 - totalA) : Math.abs(totalA)) * (Math.PI / 180);
 }
 
 

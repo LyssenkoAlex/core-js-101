@@ -309,7 +309,7 @@ function isCreditCardNumber(cnn) {
 function getDigitalRoot(n) {
   let b = n;
   do {
-    b = b.toString().split('').reduce((a, b) => Number(a) + Number(b));
+    b = b.toString().split('').reduce((x, y) => Number(x) + Number(y));
   }
   while (b > 9);
   return b;

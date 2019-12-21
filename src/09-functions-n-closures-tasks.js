@@ -103,11 +103,12 @@ function memoize(func) {
  * retryer() => 2
  */
 function retry(func, attempts) {
+  const error = [];
   return () => {
     for (let i = 0; i < attempts; i += 1) {
       try {
         return func();
-      } catch (err) {}
+      } catch (err) { error.push(`problem: ${i}`); }
     }
     return null;
   };
